@@ -36,8 +36,8 @@ app.post('/api/notes', (req, res) => {
     if (title && text) {
         // Variable for the object we will save
         const newNote = {
-            title,
-            text,
+            title: req.body.title,
+            text: req.body.text,
             note_id: uuid(),
         };
 
@@ -47,15 +47,15 @@ app.post('/api/notes', (req, res) => {
                 console.error(err);
             } else {
                 // Convert string into JSON object
-                const parsedNotes = JSON.parse(data);
+                // const parsedNotes = JSON.parse(data);
 
                 // Add a new review
-                parsedNotes.push(newNote);
+                notes.push(newNote);
 
                 // Write updated reviews back to the file
-                fs.writeFileSync(
+                fs.writeFile(
                     './db/db.json',
-                    JSON.stringify(parsedNotes, null, 3),
+                    JSON.stringify(notes, null, 2),
                     (writeErr) =>
                         writeErr
                             ? console.error(writeErr)
