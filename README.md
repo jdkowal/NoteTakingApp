@@ -3,6 +3,7 @@ This app is used to take notes using express
 
 ![Link to Application](https://floating-ocean-78919.herokuapp.com/)
 ![Link to Github](https://github.com/jdkowal/NoteTakingApp)
+1[Screenshot](assets\images\screednshot.png)
 
 ## Description
 GIVEN a note-taking application
